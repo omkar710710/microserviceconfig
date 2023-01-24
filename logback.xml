@@ -13,7 +13,7 @@
                 <pattern>
                     <pattern>
                         {
-                        "appName"= "${name}"
+                        "appName":"${name}"
                         }
                     </pattern>
                 </pattern>
