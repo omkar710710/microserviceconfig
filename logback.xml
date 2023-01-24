@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <springProperty scope="context" name="name" source="spring.application.name"/>
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>localhost:5000</destination>
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
@@ -12,7 +13,7 @@
                 <pattern>
                     <pattern>
                         {
-                        "appName": "service1"
+                        "appName": ${name}
                         }
                     </pattern>
                 </pattern>
